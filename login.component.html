@@ -1,0 +1,13 @@
+<h1>This Is Sign In and SignUp Page</h1>
+<form class="container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    Enter Id:<input type="text"  name="Id" placeholder="Enter Id" formControlName="id"><br>
+    Enter Name:<input type="text"  name="firstname" placeholder="Enter Name" formControlName="name"><br>
+    Enter Age :<input type="text"  name="firstname" placeholder="age" formControlName="age"><br>
+    Enter Salary:<input type="text"  name="firstname" placeholder="salary" formControlName="salary"><br>
+    Enter Design:<input type="text" name="lastname" placeholder="design" formControlName="design"><br>
+    <input type="submit" value="SUBMIT" [disabled]="!form.valid">
+    <br><br>
+   </form>
+   <button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();"><i class="fa fa-plus"></i> Add</button>    
+
+ 
