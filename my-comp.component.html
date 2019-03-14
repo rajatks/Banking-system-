@@ -1,0 +1,57 @@
+<h1>This IS My-Comp </h1>
+<br>
+<hr>
+<h2>
+  Enter Name :<input type="text" #in1><br>
+  <button type="button" (click)="getItem(in1.value)">Get User</button><br><br>
+  <p >Name: {{user.name}}</p>
+</h2>
+
+
+<h1>
+  Inserting a record
+</h1>
+<hr>
+
+  <form class="container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  Enter Id:<input type="text"  name="Id" placeholder="Enter Id" formControlName="id"><br>
+  Enter Name:<input type="text"  name="firstname" placeholder="Enter Name" formControlName="name"><br>
+  Enter Age :<input type="text"  name="firstname" placeholder="age" formControlName="age"><br>
+  Enter Salary:<input type="text"  name="firstname" placeholder="salary" formControlName="salary"><br>
+  Enter Design:<input type="text" name="lastname" placeholder="design" formControlName="design"><br>
+  <input type="submit" value="SUBMIT" [disabled]="!form.valid">
+  <br><br>
+ </form>
+
+<hr><hr>
+
+<h1>
+  Deleteing records
+</h1>
+<hr>
+<h2>
+  Enter Id:<input type="text" #myinput4><br>
+
+  <button type="button" (click)="deleteItem(myinput4.value)">Delete User</button>
+  <br><br>
+
+</h2>
+<hr><hr>
+
+<h1>
+  Deleteing All records
+</h1>
+<hr>
+<h2>
+
+  <button type="button" (click)="getAllItem()">Display all records</button>
+  <br><br>
+ <ul>
+   <li *ngFor="let user of users">{{user.name}}</li>
+ </ul>
+</h2>
+<hr><hr>
+
+
+
+<router-outlet></router-outlet>
